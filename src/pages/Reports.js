@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 function Reports() {
   return (
@@ -8,4 +8,4 @@ function Reports() {
   )
 }
 
-export default Reports
+export default Reports;
