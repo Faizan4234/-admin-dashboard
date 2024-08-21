@@ -1,25 +1,53 @@
+@tailwind utilities;
 @tailwind base;
 @tailwind components;
-@tailwind utilities;
-/* Default styles */
-.container {
+
+
+@keyframes colorChange {
+    0% {
+      color: #4f46e5; /* Initial color (indigo-600) */
+    }
+    50% {
+      color: #f97316; /* Intermediate color (orange-500) */
+    }
+    100% {
+      color: #4f46e5; /* Return to initial color */
+    }
+  }
+  
+  .logo-container {
+    animation: bounce 2s infinite;
+  }
+  
+  .logo-text {
+    animation: colorChange 3s infinite;
+  }
+  
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-30px);
+    }
+    60% {
+      transform: translateY(-15px);
+    }
+  }
+  
+  @keyframes swim {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+  
+  .fish-background {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    padding: 16px;
+    height: 100%;
+    background: url('/src/assets/images/image3.jpg') repeat-x; 
+    background-size: contain; /* Adjust based on your sprite */
+    animation: swim 10s linear infinite;
+    overflow: hidden;
   }
-  
-  /* For screens wider than 600px */
-  @media (min-width: 600px) {
-    .container {
-      width: 50%;
-      padding: 24px;
-    }
-  }
-  
-  /* For screens wider than 900px */
-  @media (min-width: 900px) {
-    .container {
-      width: 33%;
-      padding: 32px;
-    }
-  }
-  

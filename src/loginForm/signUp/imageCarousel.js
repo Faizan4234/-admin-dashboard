@@ -16,22 +16,27 @@ const ImageCarousel = ({ images }) => {
         setCurrentImageIndex(index);
     };
 
+    if (images.length === 0) {
+        return <div>No images to display</div>;
+    }
+
     return (
         <div className="relative w-1/2 flex items-center justify-center overflow-hidden bg-gray-200">
             <button
                 className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white bg-black bg-opacity-50 p-2 rounded"
                 onClick={handlePrevImage}
+                aria-label="Previous Image"
             >
                 <FaArrowLeft />
             </button>
-            <img
-                src={images[currentImageIndex]}
-                alt="Carousel"
+            <img src={images[currentImageIndex]}
+                alt={`Description of images ${currentImageIndex + 1}`}
                 className="w-full h-auto max-h-[60vh] object-cover"
             />
             <button
                 className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white bg-black bg-opacity-50 p-2 rounded"
                 onClick={handleNextImage}
+                aria-label="Next Image"
             >
                 <FaArrowRight />
             </button>

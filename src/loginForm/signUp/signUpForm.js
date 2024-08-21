@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import PasswordInput from './passwordInput';
+import LogoFaizan from '../../assets/logo/logoFaizan'; // Update import path if necessary
 
 const SignUpForm = () => {
     const [password, setPassword] = useState('');
@@ -22,16 +23,22 @@ const SignUpForm = () => {
     };
 
     return (
-        <div className="w-1/2 flex flex-col items-center justify-center p-8 relative bg-gray-100">
-            <div className="absolute top-4 right-4 text-2xl font-bold">LOGO</div>
-            <form className="w-full max-w-md bg-white p-6 rounded-lg shadow-lg">
-                <h2 className="text-2xl font-bold mb-4">Sign Up</h2>
+        <div className="flex flex-col items-center justify-center p-4 sm:p-8 md:p-12 lg:p-16 xl:p-20 min-h-screen bg-gray-100">
+            {/* Logo */}
+            <div className="absolute top-4 right-4 text-2xl font-bold">
+                <LogoFaizan />
+            </div>
+
+            {/* Form Container */}
+            <form className="w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl bg-white p-6 rounded-lg shadow-lg space-y-4">
+                <h2 className="text-2xl font-bold mb-4 text-center">Sign Up</h2>
+
                 {/* First Name and Last Name */}
-                <div className="flex space-x-4 mb-4">
+                <div className="flex flex-col md:flex-row md:space-x-4 mb-4">
                     <input
                         type="text"
                         placeholder="First Name"
-                        className="flex-1 p-2 border border-gray-300 rounded"
+                        className="flex-1 p-2 border border-gray-300 rounded mb-2 md:mb-0"
                         required
                     />
                     <input
@@ -41,12 +48,13 @@ const SignUpForm = () => {
                         required
                     />
                 </div>
+
                 {/* Email and Phone Number */}
-                <div className="flex space-x-4 mb-4">
+                <div className="flex flex-col md:flex-row md:space-x-4 mb-4">
                     <input
                         type="email"
                         placeholder="Email"
-                        className="flex-1 p-2 border border-gray-300 rounded"
+                        className="flex-1 p-2 border border-gray-300 rounded mb-2 md:mb-0"
                         required
                     />
                     <input
@@ -56,6 +64,7 @@ const SignUpForm = () => {
                         required
                     />
                 </div>
+
                 {/* Password */}
                 <PasswordInput
                     value={password}
@@ -64,6 +73,7 @@ const SignUpForm = () => {
                     onToggleVisibility={togglePasswordVisibility}
                     placeholder="Password"
                 />
+
                 {/* Confirm Password */}
                 <PasswordInput
                     value={confirmPassword}
@@ -72,19 +82,22 @@ const SignUpForm = () => {
                     onToggleVisibility={toggleConfirmPasswordVisibility}
                     placeholder="Confirm Password"
                 />
+
                 {/* Checkbox and Terms */}
                 <div className="flex items-center mb-4">
                     <input
                         type="checkbox"
                         id="terms"
                         className="mr-2"
+                        required
                     />
-                    <label htmlFor="Terms" className="text-sm">
+                    <label htmlFor="terms" className="text-sm">
                         I agree to the
                         <Link to="/Terms" className="text-blue-500"> Terms of Service</Link> and
                         <Link to="/Privacy" className="text-blue-500"> Privacy Policy</Link>
                     </label>
                 </div>
+
                 {/* Submit Button */}
                 <button
                     type="submit"
@@ -92,6 +105,8 @@ const SignUpForm = () => {
                 >
                     Sign Up
                 </button>
+
+                {/* Login Button */}
                 <button
                     type="button"
                     onClick={handleLoginRedirect}

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import SignUp from './signUps';
-import Login from '../login/logins';
-import Terms from './term';
-import Privacy from './privacy';
-import App from '../../App';
+import SignUp from './signUp/signUps';
+import Login from './login/logins';
+import Terms from './signUp/term';
+import Privacy from './signUp/privacy';
+import App from '../App';
 
 const BrowseRoot = () => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
