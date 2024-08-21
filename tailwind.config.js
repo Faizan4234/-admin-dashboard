@@ -7,8 +7,7 @@ module.exports = {
     extend: {
       colors: {
         primary: '#3490dc',    // Blue
-        secondary: '#ffed4a',  // Yellow
-        accent: '#e53e3e',     // Red
+        'primary-dark': '#2779bd', // Darker Blue
       },
       keyframes: {
         colorChange: {

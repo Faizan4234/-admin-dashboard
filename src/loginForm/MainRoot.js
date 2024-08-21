@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import SignUp from './signUp/signUps';
-import Login from './login/logins';
-import Terms from './signUp/term';
-import Privacy from './signUp/privacy';
+import LoginPage from './login/LoginPage';
+import Terms from '../pages/term';
+import Privacy from '../pages/privacy';
 import App from '../App';
 
 const BrowseRoot = () => {
@@ -27,7 +27,7 @@ const BrowseRoot = () => {
                 <Route path="/*" element={<App onLogout={handleLogout} />} />
             ) : (
                 <>
-                    <Route path="/login" element={<Login onLogin={handleLogin} />} />
+                    <Route path="/login" element={<LoginPage onLogin={handleLogin} />} />
                     <Route path="/signup" element={<SignUp onLogin={handleLogin} />} />
                     <Route path="/terms" element={<Terms />} />
                     <Route path="/privacy" element={<Privacy />} />

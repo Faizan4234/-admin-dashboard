@@ -14,10 +14,9 @@ import './index.css';
 const App = () => {
     return (
         <>
-            <div className="fixed top-4 right-4 ">
-                <LogoFaizan />
-            </div>
+            <LogoFaizan />
             <NavBar />
+
             <main className="flex-1 p-6 transition-margin duration-300">
                 <Routes>
                     <Route path='/' element={<Home />} />
@@ -26,6 +25,7 @@ const App = () => {
                     <Route path='/about' element={<About />} />
                 </Routes>
             </main>
+
         </>
     );
 };

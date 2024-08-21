@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import PasswordInput from './passwordInput';
-import LogoFaizan from '../../assets/logo/logoFaizan'; // Update import path if necessary
+import PasswordInput from '../passwordInput';
+import LogoFaizan from '../../assets/logo/logoFaizan';
 
 const SignUpForm = () => {
     const [password, setPassword] = useState('');
